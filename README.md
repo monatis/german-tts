@@ -22,4 +22,4 @@ Some good guys are doing a great job at [tensorspeech/TensorFlowTTS](https://git
 - `saved_model` formats that I am releasing here are not suitable for finetuning. Architecture implementation uses `Subclassing API` in TensorFlow 2.x and gets multiple inputs in `call` method for teacher forcing during training. This caused some problems when exporting to `saved_model` and I had to remove this logic before exporting. If you want to finetune models, please see [my fork of TensorFlowTTS](https://github.com/monatis/TensorFlowTTS).
 
 ## License
-These pretrained model artifacts are licensed under the same terms of the dataset it is trained on. However, you may want to contact me for paid consultancies and/or collaborations in speech and/or NLP projects at the email address shown on [my profile](https://github.com/monatis).
+You can use these pretrained model artifacts and code examples under the terms of Apache 2.0 license. On the other hand, you may want to contact me for paid consultancies and/or collaborations in speech and/or NLP projects at the email address shown on [my profile](https://github.com/monatis).
