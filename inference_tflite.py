@@ -140,4 +140,3 @@ if __name__ == "__main__":
     mbmelgan_input_details = mbmelgan_interpreter.get_input_details()
     mbmelgan_output_details = mbmelgan_interpreter.get_output_details()
     audio = inference_tflite("Möchtest du das meiner Frau erklären? Nein? Ich auch nicht.", interpreter, mbmelgan_interpreter)
-    wavfile.write("sample.wav", 22050, audio)
