@@ -1,6 +1,8 @@
 # german-tts
 German Tacotron 2 and Multi-band MelGAN in TensorFlow with TF Lite inference support
 
+💬 Say hello in [Discussions](https://github.com/monatis/german-tts/discussions/1) if you find it useful for anything.
+
 ## Overview
 I am releasing pretrained German neural text-to-speech (TTS) models Tacotron 2 and Multi-band MelGAN. It supports inference with `saved_model` and `TF Lite` formats.
 
