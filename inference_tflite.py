@@ -84,7 +84,7 @@ def prepare_input(input_ids):
           tf.convert_to_tensor([len(input_ids)], tf.int32),
           tf.convert_to_tensor([0], dtype=tf.int32))
 
-
+processor = Processor()
 
 def infer_tflite(input_text, interpreter, mbmelgan_interpreter):
     input_ids = processor.text_to_sequence(input_text)
@@ -133,10 +133,14 @@ if __name__ == "__main__":
     input_details = interpreter.get_input_details()
     output_details = interpreter.get_output_details()
 
-    mbmelgan_interpreter = tf.lite.Interpreter(model_path=path_tombmelgan[:-6] + "tflite")
+    mbmelgan_interpreter = tf.lite.Interpreter(model_path=path_to_melgan[:-6] + "tflite")
     mbmelgan_interpreter.allocate_tensors()
 
     # Get input and output tensors.
     mbmelgan_input_details = mbmelgan_interpreter.get_input_details()
     mbmelgan_output_details = mbmelgan_interpreter.get_output_details()
-    audio = inference_tflite("Möchtest du das meiner Frau erklären? Nein? Ich auch nicht.", interpreter, mbmelgan_interpreter)
+    start = time.time()
+    audio = infer_tflite("Möchtest du das meiner Frau erklären? Nein? Ich auch nicht.", interpreter, mbmelgan_interpreter)
+    duration = time.time() - start
+    print(F"it took {duration} secs")
+    wavfile.write("sample_tflite.wav", 22050, audio)
