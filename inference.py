@@ -38,6 +38,7 @@ _curly_re = re.compile(r"(.*?)\{(.+?)\}(.*)")
 def german_cleaners(text):
     """Pipeline for German text, including number and abbreviation expansion."""
     text = GermanTransliterate(replace={';': ',', ':': ' '}, sep_abbreviation=' -- ').transliterate(text)
+    print(text)
     return text
 
 class Processor():
